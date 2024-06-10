@@ -66,7 +66,7 @@ object CI_Notify {
 
   val ci_notify = CI_Build.Job(
     "notify", "notifies external ci pipelines",
-    CI_Build.Profile(1, 1, false),
+    CI_Build.Local("notify", 1, 1, false),
     CI_Build.Build_Config(
       documents = false, clean = false, post_hook = (_, options, _) => dispatch(options))
   )
